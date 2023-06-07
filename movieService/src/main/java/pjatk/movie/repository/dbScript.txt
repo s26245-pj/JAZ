@@ -1,0 +1,40 @@
+CREATE DATABASE movieService;
+USE movieService;
+CREATE TABLE movies (
+	id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(40) NOT NULL,
+    category ENUM('Action', 'Comedy', 'Drama', 'Fantasy',
+					'Horror', 'Romance', 'Thriller'),
+    description CHAR(200),
+    releaseYear INT
+);
+
+INSERT INTO movies (
+    title,
+    category,
+    `description`,
+    releaseYear
+) VALUES (
+    'The Shining',
+    'Horror',
+    'very good Stanley Kubrick movie',
+    1980
+), (
+    'The Godfather',
+    'Drama',
+    'Francis Ford Coppola movie about Don Vito Corleone family',
+    1972
+), (
+    'The Dark Knight',
+    'Action',
+    'Movie about Batman and Joker',
+    2008
+), (
+    'Pulp Fiction',
+    'Drama',
+    'Quentin Tarantino directed, one of the best movies of all time',
+    1994
+);
+
+
+
