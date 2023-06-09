@@ -1,13 +1,13 @@
-package com.example.product;
+package com.example.movieService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductApplication {
+public class movieServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProductApplication.class, args);
+        SpringApplication.run(movieServiceApplication.class, args);
     }
 
 }

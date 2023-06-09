@@ -1,6 +1,7 @@
 package pjatk.com.rentalservice.service;
 
 
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pjatk.com.rentalservice.model.Movie;
@@ -13,17 +14,18 @@ public class RentalService {
         this.restTemplate = restTemplate;
     }
 
-    private final String movieServiceUrl = "http://localhost:8080/movieService/movies/";
+    private final String movieServiceUrl = "http://localhost:8082/moviesDb/movies/";
 
-    public Movie getMovie(Long id) {
+    public Movie getMovie(int id) {
         return restTemplate.getForObject(movieServiceUrl + id, Movie.class);
     }
 
-    /*
-    public Movie returnMovie(Long id) {
+    public void returnMovie(int id) {
+        restTemplate.put(movieServiceUrl + "setAvailable/" + id, HttpEntity.EMPTY);
+    }
 
-    }*/
-
-
+    public void rentMovie(int id) {
+        restTemplate.put(movieServiceUrl + "setUnavailable/" + id, HttpEntity.EMPTY);
+    }
 
 }
