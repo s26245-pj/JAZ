@@ -14,7 +14,7 @@ public class RentalService {
         this.restTemplate = restTemplate;
     }
 
-    private final String movieServiceUrl = "http://localhost:8082/moviesDb/movies/";
+    private final String movieServiceUrl = "http://localhost:8080/moviesDb/movies/";
 
     public Movie getMovie(int id) {
         return restTemplate.getForObject(movieServiceUrl + id, Movie.class);
